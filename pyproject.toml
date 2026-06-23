@@ -1,0 +1,50 @@
+[project]
+name = "fightdrill"
+version = "0.1.0"
+description = "Plataforma web de treinamento para artes marciais e esportes de combate"
+authors = [
+    { name = "Pedro Artur de Aguiar Cabral" },
+    { name = "Ruy Agostinho Otoni Vieira Neto" },
+    { name = "Vitor Pedrosa Brito dos Santos" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+target-version = "py312"
+
+exclude = [
+    ".git",
+    "__pypackages__",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+    "**/__init__.py",
+]
+
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort (import sorting)
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade (modern Python syntax)
+    "N",   # pep8-naming
+    "ISC", # flake8-implicit-str-concat
+]
+
+ignore = [
+    "E501", # Line too long (handled by formatter)
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
